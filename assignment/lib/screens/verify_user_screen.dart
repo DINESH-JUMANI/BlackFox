@@ -11,7 +11,11 @@ class VerifyUserScreen extends StatefulWidget {
 }
 
 class _VerifyUserScreenState extends State<VerifyUserScreen> {
-  final _verifyForm = GlobalKey<FormState>();
+  final _verifyForm1 = GlobalKey<FormState>();
+  final _verifyForm2 = GlobalKey<FormState>();
+  final _verifyForm3 = GlobalKey<FormState>();
+  final _verifyForm4 = GlobalKey<FormState>();
+  final _verifyForm5 = GlobalKey<FormState>();
   final _num1 = TextEditingController();
   final _num2 = TextEditingController();
   final _num3 = TextEditingController();
@@ -29,7 +33,11 @@ class _VerifyUserScreenState extends State<VerifyUserScreen> {
   }
 
   void verify() {
-    final isValid = _verifyForm.currentState!.validate();
+    final isValid = _verifyForm1.currentState!.validate() &&
+        _verifyForm2.currentState!.validate() &&
+        _verifyForm3.currentState!.validate() &&
+        _verifyForm4.currentState!.validate() &&
+        _verifyForm5.currentState!.validate();
     if (isValid) {
       Navigator.push(
         context,
@@ -37,7 +45,7 @@ class _VerifyUserScreenState extends State<VerifyUserScreen> {
           builder: (_) => const NameRegisterScreen(),
         ),
       );
-      showSnackBar(context, 'OTP Send Successfully');
+      showSnackBar(context, 'Verified');
     }
   }
 
@@ -97,7 +105,7 @@ class _VerifyUserScreenState extends State<VerifyUserScreen> {
                   width: 60,
                   height: 60,
                   child: Form(
-                    key: _verifyForm,
+                    key: _verifyForm1,
                     child: TextFormField(
                       controller: _num1,
                       keyboardType: TextInputType.number,
@@ -107,6 +115,8 @@ class _VerifyUserScreenState extends State<VerifyUserScreen> {
                       validator: (val) {
                         if (val == null || val.isEmpty) {
                           return 'Enter the number';
+                        } else if (val.length > 1) {
+                          return 'Enter Single number';
                         }
                         return null;
                       },
@@ -122,7 +132,7 @@ class _VerifyUserScreenState extends State<VerifyUserScreen> {
                   width: 60,
                   height: 60,
                   child: Form(
-                    key: _verifyForm,
+                    key: _verifyForm2,
                     child: TextFormField(
                       controller: _num2,
                       keyboardType: TextInputType.number,
@@ -132,6 +142,8 @@ class _VerifyUserScreenState extends State<VerifyUserScreen> {
                       validator: (val) {
                         if (val == null || val.isEmpty) {
                           return 'Enter the number';
+                        } else if (val.length > 1) {
+                          return 'Enter Single number';
                         }
                         return null;
                       },
@@ -147,7 +159,7 @@ class _VerifyUserScreenState extends State<VerifyUserScreen> {
                   width: 60,
                   height: 60,
                   child: Form(
-                    key: _verifyForm,
+                    key: _verifyForm3,
                     child: TextFormField(
                       controller: _num3,
                       keyboardType: TextInputType.number,
@@ -157,6 +169,8 @@ class _VerifyUserScreenState extends State<VerifyUserScreen> {
                       validator: (val) {
                         if (val == null || val.isEmpty) {
                           return 'Enter the number';
+                        } else if (val.length > 1) {
+                          return 'Enter Single number';
                         }
                         return null;
                       },
@@ -172,7 +186,7 @@ class _VerifyUserScreenState extends State<VerifyUserScreen> {
                   width: 60,
                   height: 60,
                   child: Form(
-                    key: _verifyForm,
+                    key: _verifyForm4,
                     child: TextFormField(
                       controller: _num4,
                       keyboardType: TextInputType.number,
@@ -182,6 +196,8 @@ class _VerifyUserScreenState extends State<VerifyUserScreen> {
                       validator: (val) {
                         if (val == null || val.isEmpty) {
                           return 'Enter the number';
+                        } else if (val.length > 1) {
+                          return 'Enter Single number';
                         }
                         return null;
                       },
@@ -197,7 +213,7 @@ class _VerifyUserScreenState extends State<VerifyUserScreen> {
                   width: 60,
                   height: 60,
                   child: Form(
-                    key: _verifyForm,
+                    key: _verifyForm5,
                     child: TextFormField(
                       controller: _num5,
                       keyboardType: TextInputType.number,
@@ -207,6 +223,8 @@ class _VerifyUserScreenState extends State<VerifyUserScreen> {
                       validator: (val) {
                         if (val == null || val.isEmpty) {
                           return 'Enter the number';
+                        } else if (val.length > 1) {
+                          return 'Enter Single number';
                         }
                         return null;
                       },
