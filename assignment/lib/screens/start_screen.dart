@@ -13,6 +13,10 @@ class StartScreen extends StatelessWidget {
     );
   }
 
+  void becomeSeller() {
+    // to be implemented
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -80,7 +84,7 @@ class StartScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: becomeSeller,
                     child: const Center(
                       child: Text(
                         'Become a Seller',
