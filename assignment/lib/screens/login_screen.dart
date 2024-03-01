@@ -18,7 +18,9 @@ class _LoginScreenState extends State<LoginScreen> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (_) => const VerifyUserScreen(),
+          builder: (_) => VerifyUserScreen(
+            number: number.text,
+          ),
         ),
       );
       showSnackBar(context, 'OTP Send Successfully');
