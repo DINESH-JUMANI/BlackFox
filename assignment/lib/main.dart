@@ -1,3 +1,4 @@
+import 'package:assignment/bottom_bar.dart';
 import 'package:assignment/screens/start_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const StartScreen(),
+      home: const BottomBar(),
     );
   }
 }

@@ -1,4 +1,3 @@
-import 'package:assignment/screens/home_screen.dart';
 import 'package:assignment/utils.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
@@ -20,10 +19,10 @@ class _NameRegisterScreenState extends State<NameRegisterScreen> {
     final isValidName = _verifyForm1.currentState!.validate();
     final isValidEmail = _verifyForm2.currentState!.validate();
     if (isValidName && isValidEmail) {
-      Navigator.push(
+      Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (_) => const HomeScreen(),
+          builder: (_) => const BottomAppBar(),
         ),
       );
     }
