@@ -1,4 +1,5 @@
-import 'package:assignment/screens/details.dart';
+import 'package:assignment/screens/main_app_screens/details.dart';
+import 'package:assignment/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -21,13 +22,14 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: double.infinity,
-      width: double.infinity,
+      height: MediaQuery.of(context).size.height,
+      width: MediaQuery.of(context).size.width,
       margin: const EdgeInsets.all(15),
       decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: Colors.black12)),
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: Colors.black12),
+      ),
       child: GestureDetector(
         onTap: goToDetails,
         child: Container(
@@ -41,16 +43,16 @@ class _HomeScreenState extends State<HomeScreen> {
               Radius.circular(10),
             ),
           ),
-          child: Column(
+          child: const Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
               Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: EdgeInsets.all(10.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Row(
+                    Row(
                       children: [
                         CircleAvatar(
                           backgroundImage: AssetImage('assets/images/1.jpg'),
@@ -65,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ],
                     ),
-                    const Padding(
+                    Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         'UI/UX Designer',
@@ -79,48 +81,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        ElevatedButton(
-                          style: const ButtonStyle(
-                            fixedSize: MaterialStatePropertyAll(Size.infinite),
-                            backgroundColor:
-                                MaterialStatePropertyAll(Colors.black),
-                          ),
-                          onPressed: () {},
-                          child: const Text(
-                            'SEO',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 10,
-                            ),
-                          ),
+                        CustomButton(
+                          buttonText: 'SEO',
                         ),
-                        ElevatedButton(
-                          style: const ButtonStyle(
-                            backgroundColor:
-                                MaterialStatePropertyAll(Colors.black),
-                          ),
-                          onPressed: () {},
-                          child: const Text(
-                            'Freelancing',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 10,
-                            ),
-                          ),
+                        CustomButton(
+                          buttonText: 'Freelancing',
                         ),
-                        ElevatedButton(
-                          style: const ButtonStyle(
-                            backgroundColor:
-                                MaterialStatePropertyAll(Colors.black),
-                          ),
-                          onPressed: () {},
-                          child: const Text(
-                            'User Research',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 10,
-                            ),
-                          ),
+                        CustomButton(
+                          buttonText: 'User Research',
                         ),
                       ],
                     ),

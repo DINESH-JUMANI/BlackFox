@@ -1,4 +1,4 @@
-import 'package:assignment/screens/home_screen.dart';
+import 'package:assignment/screens/main_app_screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class BottomBar extends StatefulWidget {

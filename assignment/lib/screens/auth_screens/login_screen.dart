@@ -1,5 +1,5 @@
-import 'package:assignment/screens/verify_user_screen.dart';
-import 'package:assignment/utils.dart';
+import 'package:assignment/screens/auth_screens/verify_user_screen.dart';
+import 'package:assignment/widgets/utils.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 

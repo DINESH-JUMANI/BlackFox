@@ -1,5 +1,5 @@
-import 'package:assignment/screens/name_register_screen.dart';
-import 'package:assignment/utils.dart';
+import 'package:assignment/screens/auth_screens/name_register_screen.dart';
+import 'package:assignment/widgets/utils.dart';
 import 'package:flutter/material.dart';
 
 class VerifyUserScreen extends StatefulWidget {

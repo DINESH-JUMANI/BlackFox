@@ -1,4 +1,4 @@
-import 'package:assignment/screens/login_screen.dart';
+import 'package:assignment/screens/auth_screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class StartScreen extends StatelessWidget {

@@ -1,4 +1,5 @@
-import 'package:assignment/utils.dart';
+import 'package:assignment/widgets/bottom_bar.dart';
+import 'package:assignment/widgets/utils.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +23,7 @@ class _NameRegisterScreenState extends State<NameRegisterScreen> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (_) => const BottomAppBar(),
+          builder: (_) => const BottomBar(),
         ),
       );
     }
