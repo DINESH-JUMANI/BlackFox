@@ -23,7 +23,9 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         ),
       );
-      showSnackBar(context, 'OTP Send Successfully');
+      showSnackBar(context, 'OTP Send Successfully',Colors.green);
+    } else {
+      showSnackBar(context, 'Error in sending OTP',Colors.red);
     }
   }
 

@@ -26,8 +26,10 @@ class _NameRegisterScreenState extends State<NameRegisterScreen> {
           builder: (_) => const BottomBar(),
         ),
       );
+      showSnackBar(context, 'Registered Successfully',Colors.green);
+    } else {
+      showSnackBar(context, 'Error occured in Registration',Colors.red);
     }
-    showSnackBar(context, 'Registered Successfully');
   }
 
   @override

@@ -1,3 +1,4 @@
+import 'package:assignment/widgets/bottom_bar.dart';
 import 'package:assignment/widgets/custom_button.dart';
 import 'package:assignment/widgets/custom_feedback.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,16 @@ class Details extends StatefulWidget {
 }
 
 class _DetailsState extends State<Details> {
+  void loadMore() {}
+  void goBack() {
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (_) => const BottomBar(),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -26,71 +37,75 @@ class _DetailsState extends State<Details> {
                   child: Column(
                     children: [
                       Expanded(
-                        child: Container(
-                          decoration: const BoxDecoration(
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: AssetImage('assets/images/4.jpg'),
+                        child: GestureDetector(
+                          onTap: goBack,
+                          child: Container(
+                            decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: AssetImage('assets/images/4.jpg'),
+                              ),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(10),
+                              ),
                             ),
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(10),
-                            ),
-                          ),
-                          child: const Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              SizedBox(height: 20),
-                              Padding(
-                                padding: EdgeInsets.all(10.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        CircleAvatar(
-                                          backgroundImage:
-                                              AssetImage('assets/images/1.jpg'),
-                                        ),
-                                        SizedBox(width: 10),
-                                        Text(
-                                          'cc_creative',
+                            child: const Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                SizedBox(height: 20),
+                                Padding(
+                                  padding: EdgeInsets.all(10.0),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          CircleAvatar(
+                                            backgroundImage: AssetImage(
+                                                'assets/images/1.jpg'),
+                                          ),
+                                          SizedBox(width: 10),
+                                          Text(
+                                            'cc_creative',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 18,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.all(8.0),
+                                        child: Text(
+                                          'UI/UX Designer',
                                           style: TextStyle(
                                             color: Colors.white,
                                             fontSize: 18,
+                                            fontWeight: FontWeight.bold,
                                           ),
                                         ),
-                                      ],
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.all(8.0),
-                                      child: Text(
-                                        'UI/UX Designer',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold,
-                                        ),
                                       ),
-                                    ),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      children: [
-                                        CustomButton(
-                                          buttonText: 'SEO',
-                                        ),
-                                        CustomButton(
-                                          buttonText: 'Freelancing',
-                                        ),
-                                        CustomButton(
-                                          buttonText: 'User Research',
-                                        ),
-                                      ],
-                                    ),
-                                  ],
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          CustomButton(
+                                            buttonText: 'SEO',
+                                          ),
+                                          CustomButton(
+                                            buttonText: 'Freelancing',
+                                          ),
+                                          CustomButton(
+                                            buttonText: 'User Research',
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -169,23 +184,47 @@ class _DetailsState extends State<Details> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        CustomButton(buttonText: 'SEO'),
-                        CustomButton(buttonText: 'Freelancing'),
-                        CustomButton(buttonText: 'User Research'),
+                        CustomButton(
+                          buttonText: 'SEO',
+                          foregroundColor: Colors.black,
+                          backgroundColor: Color.fromARGB(255, 218, 238, 255),
+                        ),
+                        CustomButton(
+                          buttonText: 'Freelancing',
+                          foregroundColor: Colors.black,
+                          backgroundColor: Color.fromARGB(255, 218, 238, 255),
+                        ),
+                        CustomButton(
+                          buttonText: 'User Research',
+                          foregroundColor: Colors.black,
+                          backgroundColor: Color.fromARGB(255, 218, 238, 255),
+                        ),
                       ],
                     ),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        CustomButton(buttonText: 'UI Research'),
-                        CustomButton(buttonText: 'Prototyping'),
-                        CustomButton(buttonText: 'Wire Framing'),
+                        CustomButton(
+                          buttonText: 'UI Research',
+                          foregroundColor: Colors.black,
+                          backgroundColor: Color.fromARGB(255, 218, 238, 255),
+                        ),
+                        CustomButton(
+                          buttonText: 'Prototyping',
+                          foregroundColor: Colors.black,
+                          backgroundColor: Color.fromARGB(255, 218, 238, 255),
+                        ),
+                        CustomButton(
+                          buttonText: 'Wire Framing',
+                          foregroundColor: Colors.black,
+                          backgroundColor: Color.fromARGB(255, 218, 238, 255),
+                        ),
                       ],
                     ),
                   ],
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 20),
                 const Text(
                   'About Me',
                   style: TextStyle(
@@ -198,7 +237,7 @@ class _DetailsState extends State<Details> {
                   'Design a futuristic 3D skeleton model with a dynamic RGB lighting system set against a captivating space-themed background. Craft the skeleton to have a sleek, futuristic aesthetic, incorporating intricate details and streamlined features. Implement an RGB lighting scheme that pulsates or transitions smoothly across the skeleton, creating an engaging visual effect. Ensure compatibility with real-time rendering engines to maximize interactivity. The space- themed background should complement the futuristic theme, with stars, nebulae, or cosmic elements. Prioritize a balance between creativity and functionality, delivering a visually stunning 3D model ready for use in various digital or multimedia applications.',
                   style: TextStyle(
                     fontSize: 15,
-                    color: Colors.black,
+                    color: Colors.black87,
                   ),
                 ),
                 const SizedBox(height: 15),
@@ -232,7 +271,7 @@ class _DetailsState extends State<Details> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 20),
                 Container(
                   height: MediaQuery.of(context).size.height,
                   width: MediaQuery.of(context).size.width,
@@ -324,7 +363,7 @@ class _DetailsState extends State<Details> {
                         Colors.grey.shade200,
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: loadMore,
                     child: const Text(
                       'Load More',
                       style: TextStyle(

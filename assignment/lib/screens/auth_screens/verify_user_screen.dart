@@ -45,7 +45,9 @@ class _VerifyUserScreenState extends State<VerifyUserScreen> {
           builder: (_) => const NameRegisterScreen(),
         ),
       );
-      showSnackBar(context, 'Verified');
+      showSnackBar(context, 'Verified', Colors.green);
+    } else {
+      showSnackBar(context, 'Verification Failed', Colors.red);
     }
   }
 

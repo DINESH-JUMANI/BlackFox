@@ -1,4 +1,5 @@
 import 'package:assignment/screens/main_app_screens/details.dart';
+import 'package:assignment/widgets/utils.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -16,6 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
         builder: (_) => const Details(),
       ),
     );
+    showSnackBar(context, 'Welcome to our App', Colors.green);
   }
 
   @override
