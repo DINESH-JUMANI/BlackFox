@@ -20,15 +20,17 @@ class _NameRegisterScreenState extends State<NameRegisterScreen> {
     final isValidName = _verifyForm1.currentState!.validate();
     final isValidEmail = _verifyForm2.currentState!.validate();
     if (isValidName && isValidEmail) {
+      Navigator.pop(context);
+      Navigator.pop(context);
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
           builder: (_) => const BottomBar(),
         ),
       );
-      showSnackBar(context, 'Registered Successfully',Colors.green);
+      showSnackBar(context, 'Registered Successfully', Colors.green);
     } else {
-      showSnackBar(context, 'Error occured in Registration',Colors.red);
+      showSnackBar(context, 'Error occured in Registration', Colors.red);
     }
   }
 
@@ -128,7 +130,7 @@ class _NameRegisterScreenState extends State<NameRegisterScreen> {
               ),
             ),
           ),
-          const SizedBox(height: 80),
+          const SizedBox(height: 45),
           Expanded(
             child: Container(
               width: double.infinity,

@@ -1,6 +1,7 @@
 import 'package:assignment/screens/auth_screens/name_register_screen.dart';
 import 'package:assignment/widgets/utils.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class VerifyUserScreen extends StatefulWidget {
   final String number;
@@ -11,11 +12,8 @@ class VerifyUserScreen extends StatefulWidget {
 }
 
 class _VerifyUserScreenState extends State<VerifyUserScreen> {
-  final _verifyForm1 = GlobalKey<FormState>();
-  final _verifyForm2 = GlobalKey<FormState>();
-  final _verifyForm3 = GlobalKey<FormState>();
-  final _verifyForm4 = GlobalKey<FormState>();
-  final _verifyForm5 = GlobalKey<FormState>();
+  final _verifyForm = GlobalKey<FormState>();
+
   final _num1 = TextEditingController();
   final _num2 = TextEditingController();
   final _num3 = TextEditingController();
@@ -33,11 +31,7 @@ class _VerifyUserScreenState extends State<VerifyUserScreen> {
   }
 
   void verify() {
-    final isValid = _verifyForm1.currentState!.validate() &&
-        _verifyForm2.currentState!.validate() &&
-        _verifyForm3.currentState!.validate() &&
-        _verifyForm4.currentState!.validate() &&
-        _verifyForm5.currentState!.validate();
+    final isValid = _verifyForm.currentState!.validate();
     if (isValid) {
       Navigator.push(
         context,
@@ -93,147 +87,145 @@ class _VerifyUserScreenState extends State<VerifyUserScreen> {
             ),
           ),
           const SizedBox(height: 20),
-          Padding(
-            padding: const EdgeInsets.only(left: 8, right: 8),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(color: Colors.black26),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  width: 60,
-                  height: 60,
-                  child: Form(
-                    key: _verifyForm1,
+          Form(
+            key: _verifyForm,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black12),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    height: 60,
+                    width: 60,
                     child: TextFormField(
                       controller: _num1,
-                      keyboardType: TextInputType.number,
                       decoration: const InputDecoration(
                         border: InputBorder.none,
                       ),
+                      keyboardType: TextInputType.number,
+                      textAlign: TextAlign.center,
+                      inputFormatters: [
+                        LengthLimitingTextInputFormatter(1),
+                        FilteringTextInputFormatter.digitsOnly,
+                      ],
                       validator: (val) {
                         if (val == null || val.isEmpty) {
                           return 'Enter the number';
-                        } else if (val.length > 1) {
-                          return 'Enter Single number';
                         }
                         return null;
                       },
                     ),
                   ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(color: Colors.black26),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  width: 60,
-                  height: 60,
-                  child: Form(
-                    key: _verifyForm2,
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black12),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    height: 60,
+                    width: 60,
                     child: TextFormField(
                       controller: _num2,
-                      keyboardType: TextInputType.number,
                       decoration: const InputDecoration(
                         border: InputBorder.none,
                       ),
+                      keyboardType: TextInputType.number,
+                      textAlign: TextAlign.center,
+                      inputFormatters: [
+                        LengthLimitingTextInputFormatter(1),
+                        FilteringTextInputFormatter.digitsOnly,
+                      ],
                       validator: (val) {
                         if (val == null || val.isEmpty) {
                           return 'Enter the number';
-                        } else if (val.length > 1) {
-                          return 'Enter Single number';
                         }
                         return null;
                       },
                     ),
                   ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(color: Colors.black26),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  width: 60,
-                  height: 60,
-                  child: Form(
-                    key: _verifyForm3,
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black12),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    height: 60,
+                    width: 60,
                     child: TextFormField(
                       controller: _num3,
-                      keyboardType: TextInputType.number,
                       decoration: const InputDecoration(
                         border: InputBorder.none,
                       ),
+                      keyboardType: TextInputType.number,
+                      textAlign: TextAlign.center,
+                      inputFormatters: [
+                        LengthLimitingTextInputFormatter(1),
+                        FilteringTextInputFormatter.digitsOnly,
+                      ],
                       validator: (val) {
                         if (val == null || val.isEmpty) {
                           return 'Enter the number';
-                        } else if (val.length > 1) {
-                          return 'Enter Single number';
                         }
                         return null;
                       },
                     ),
                   ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(color: Colors.black26),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  width: 60,
-                  height: 60,
-                  child: Form(
-                    key: _verifyForm4,
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black12),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    height: 60,
+                    width: 60,
                     child: TextFormField(
                       controller: _num4,
-                      keyboardType: TextInputType.number,
                       decoration: const InputDecoration(
                         border: InputBorder.none,
                       ),
+                      keyboardType: TextInputType.number,
+                      textAlign: TextAlign.center,
+                      inputFormatters: [
+                        LengthLimitingTextInputFormatter(1),
+                        FilteringTextInputFormatter.digitsOnly,
+                      ],
                       validator: (val) {
                         if (val == null || val.isEmpty) {
                           return 'Enter the number';
-                        } else if (val.length > 1) {
-                          return 'Enter Single number';
                         }
                         return null;
                       },
                     ),
                   ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(color: Colors.black26),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  width: 60,
-                  height: 60,
-                  child: Form(
-                    key: _verifyForm5,
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black12),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    height: 60,
+                    width: 60,
                     child: TextFormField(
                       controller: _num5,
-                      keyboardType: TextInputType.number,
                       decoration: const InputDecoration(
                         border: InputBorder.none,
                       ),
+                      keyboardType: TextInputType.number,
+                      textAlign: TextAlign.center,
+                      inputFormatters: [
+                        LengthLimitingTextInputFormatter(1),
+                        FilteringTextInputFormatter.digitsOnly,
+                      ],
                       validator: (val) {
                         if (val == null || val.isEmpty) {
                           return 'Enter the number';
-                        } else if (val.length > 1) {
-                          return 'Enter Single number';
                         }
                         return null;
                       },
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
           const SizedBox(height: 80),
