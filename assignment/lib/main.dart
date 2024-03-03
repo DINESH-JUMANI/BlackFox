@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'BlackBox Assignment',
       theme: ThemeData(
         appBarTheme: const AppBarTheme(color: Colors.white),
         useMaterial3: true,

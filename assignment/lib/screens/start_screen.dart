@@ -1,4 +1,5 @@
 import 'package:assignment/screens/auth_screens/login_screen.dart';
+import 'package:assignment/widgets/utils.dart';
 import 'package:flutter/material.dart';
 
 class StartScreen extends StatelessWidget {
@@ -11,10 +12,11 @@ class StartScreen extends StatelessWidget {
         builder: (_) => const LoginScreen(),
       ),
     );
+    showSnackBar(context, 'Welcome to BlackFox', Colors.green);
   }
 
-  void becomeSeller() {
-    // to be implemented
+  void becomeSeller(BuildContext context) {
+    showSnackBar(context, 'Yet to be implemented', Colors.red);
   }
 
   @override
@@ -84,7 +86,7 @@ class StartScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   TextButton(
-                    onPressed: becomeSeller,
+                    onPressed: () => becomeSeller(context),
                     child: const Center(
                       child: Text(
                         'Become a Seller',

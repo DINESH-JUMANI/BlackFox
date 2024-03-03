@@ -1,4 +1,5 @@
 import 'package:assignment/screens/auth_screens/verify_user_screen.dart';
+import 'package:assignment/widgets/bottom_bar.dart';
 import 'package:assignment/widgets/utils.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
@@ -23,14 +24,20 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         ),
       );
-      showSnackBar(context, 'OTP Send Successfully',Colors.green);
+      showSnackBar(context, 'OTP Send Successfully', Colors.green);
     } else {
-      showSnackBar(context, 'Error in sending OTP',Colors.red);
+      showSnackBar(context, 'Error in sending OTP', Colors.red);
     }
   }
 
   void skipProcess() {
-    // to be implemented
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (_) => const BottomBar(),
+      ),
+    );
+    showSnackBar(context, 'Skipped Verification Process', Colors.black);
   }
 
   final TextEditingController number = TextEditingController();
